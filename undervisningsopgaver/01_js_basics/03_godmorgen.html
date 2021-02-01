@@ -4,53 +4,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
     <title></title>
-
-
+    <link rel="stylesheey" href="">
 
 </head>
 
-<body>
-
-
-
-    <p>Hvad er længden?</p>
-    <input type="text" id="længde">
-    <p>Hvad er bredden?</p>
-    <input type="text" id="bredde">
-    <button>Klik og beregn arealet, kig i konsollen</button>
-
+<body onload="myFunktion()">
     <script>
-        document.querySelector("button").addEventListener("click", buttonClicked);
+        function myFunktion() {
+            let d = new Date();
+            let n = d.getHours();
+            let besked;
 
-        function buttonClicked() {
-            let længde = document.querySelector("#længde").value;
-            let bredde = document.querySelector("#bredde").value;
-            let a = areal(længde, bredde);
-            let resultat;
-            if (isNaN(a)) {
-                resultat = "Det er ikke et tal, prøv igen";
-
-            } else if (a <= 0) {
-                resultat = "arealet er mindre end nul, prøv igen";
-            } else {
-                resultat = `Arealet er ${a}`;
+            if (n > 4 && n < 10) {
+                besked = "Godmorgen";
+            } else if (n > 9 && n < 18) {
+                besked = "Goddag";
+            } else if (n > 17 && n < 24) {
+                besked = "Godaften";
+            } else if (n > 23 && n < 5) {
+                besked = "Godnat"
             }
-
-            console.log(resultat);
-        }
-
-        function newDate().getHours() {
-            return l * b;
-
+            console.log(besked);
 
         }
 
     </script>
-
-
-
 </body>
 
 </html>

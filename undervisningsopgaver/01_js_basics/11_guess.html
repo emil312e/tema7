@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title></title>
+
+    <style>
+        article {
+            width: 50vw;
+            font-family: sans-serif;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <p>Hvad er længden på din flyrejse i timer?</p>
+    <input type="text" id="længde">
+
+    <button>Klik og beregn c02-udledningen, kig i konsollen</button>
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let længde = document.querySelector("#længde").value;
+            let tal = 109
+            let a = areal(længde, tal);
+            let resultat;
+            if (isNaN(a)) {
+                resultat = "Det er ikke et tal, prøv igen";
+
+            } else if (a <= 0) {
+                resultat = "arealet er mindre end nul, prøv igen";
+            } else {
+                resultat = `Co2-udledningen er ${a} kg`;
+            }
+
+            console.log(resultat);
+        }
+
+        function areal(l, t) {
+            return l * t;
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
