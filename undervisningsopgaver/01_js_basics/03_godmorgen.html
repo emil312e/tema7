@@ -9,24 +9,19 @@
 
 </head>
 
-<body onload="myFunktion()">
+<body>
     <script>
-        function myFunktion() {
-            let d = new Date();
-            let n = d.getHours();
-            let besked;
+        const time = new Date().getHours();
+        console.log("Time", time);
 
-            if (n > 4 && n < 10) {
-                besked = "Godmorgen";
-            } else if (n > 9 && n < 18) {
-                besked = "Goddag";
-            } else if (n > 17 && n < 24) {
-                besked = "Godaften";
-            } else if (n > 23 && n < 5) {
-                besked = "Godnat"
-            }
-            console.log(besked);
-
+        if (time < 5) {
+            besked = "Godnat";
+        } else if (time < 10) {
+            besked = "Godmorgen";
+        } else if (time < 18) {
+            besked = "Godaften";
+        } else {
+            console.log("Godnat")
         }
 
     </script>
