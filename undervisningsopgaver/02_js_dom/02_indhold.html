@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: auto;
+            width: 80%;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+            grid-gap: 20px;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            border: 1px solid black;
+            padding 15px;
+        }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+
+        <section1>
+            <h2>Undertitel</h2>
+
+        </section1>
+
+        <section>
+
+            <article>
+
+                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>
+            </article>
+
+            <article>
+                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam corporis hic repellendus molestiae nihil consequatur sequi non ut excepturi ipsa similique, soluta accusantium quia dolore, maxime aperiam dolor esse fuga.</p>
+            </article>
+
+        </section>
+    </main>
+
+
+    <footer>
+        This is the footer
+    </footer>
+
+    <script>
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+
+
+        const titel = document.querySelector("header");
+        console.log(titel);
+        titel.textContent = "Billedegalleri";
+        titel.innerHTML = "<h1>Billeder</h1>";
+
+        const pic1 = document.querySelector("article img");
+        console.log(pic1);
+        pic1.alt = "Billede af cykler";
+
+        const pic2 = document.querySelector("article img");
+        console.log(pic2);
+        pic1.alt = "Billede af cykler2";
+
+        const undertitel = document.querySelector("section1");
+        console.log(undertitel);
+        undertitel.textContent = "Billedegalleri";
+        //undertitel.innerHTML = "<h2>Billeder</h2>";
+
+
+        const artikel1 = document.querySelector("article:nth-child(1) p");
+        artikel1.textContent = "Her er et billede af cyklister på Frederikssundsvej";
+        //console.log(article);
+
+
+        const artikel2 = document.querySelector("article:nth-child(2) p");
+        artikel2.innerHTML = "Her er et <b>billede</b> af cyklister på Frederikssundsvej";
+
+        const underoverskrift1 = document.querySelector("article:nth-child(1) h3");
+
+        underoverskrift1.innerHTML = "Cyklister i sort/hvid";
+
+        const underoverskrift2 = document.querySelector("article:nth-child(2) h3");
+        underoverskrift2.textContent = "Blurry cyklister";
+
+        const main = document.querySelector("main");
+        console.log(main);
+
+        const tekst = document.querySelector("article p");
+        console.log(tekst);
+
+
+        const footer = document.querySelector("footer");
+        console.log(footer);
+
+    </script>
+
+</body>
+
+</html>
