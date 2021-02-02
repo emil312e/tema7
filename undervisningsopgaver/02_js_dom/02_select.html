@@ -31,7 +31,7 @@
             width: 100%;
         }
 
-         header,
+        header,
         footer {
             text-align: center;
             border: 1px solid black;
@@ -51,9 +51,16 @@
     </header>
 
     <main>
-        <h2>Undertitel</h2>
+
+        <section1>
+            <h2>Undertitel</h2>
+
+        </section1>
+
         <section>
+
             <article>
+
                 <img src="cyklister_sort_hvid.jpg" alt="cykler">
                 <h3>Article 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>
@@ -69,20 +76,51 @@
     </main>
 
 
-        <footer>
-            This is the footer
-        </footer>
+    <footer>
+        This is the footer
+    </footer>
 
- <script>
-  const titel = document. querySelector ("header");
-    console.log (titel);
-    titel.textContent = "Billedegalleri";
-     titel.innerHTML = "<h1>Billeder</h1>";
+    <script>
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
 
-     const pic1 = document. querySelector ("article:first-child img");
-         console.log (pic1);
-     pic1. alt = "Billede af cykler";
+
+        const titel = document.querySelector("header");
+        console.log(titel);
+        titel.textContent = "Billedegalleri";
+        titel.innerHTML = "<h1>Billeder</h1>";
+
+        const pic1 = document.querySelector("article img");
+        console.log(pic1);
+        pic1.alt = "Billede af cykler";
+
+        const pic2 = document.querySelector("article img");
+        console.log(pic2);
+        pic1.alt = "Billede af cykler2";
+
+        const undertitel = document.querySelector("section1");
+        console.log(undertitel);
+        undertitel.textContent = "Billedegalleri";
+        undertitel.innerHTML = "<h2>Billeder</h2>";
+
+
+        const article = document.querySelector("article h3");
+        console.log(article);
+
+
+        const main = document.querySelector("main");
+        console.log(main);
+
+        const tekst = document.querySelector("article p");
+        console.log(tekst);
+
+
+        const footer = document.querySelector("footer");
+        console.log(footer);
+
     </script>
+
 </body>
 
 </html>
