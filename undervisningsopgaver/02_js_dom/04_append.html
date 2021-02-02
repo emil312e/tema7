@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: auto;
+            width: 80%;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+            grid-gap: 20px;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            border: 1px solid black;
+            padding 15px;
+        }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+
+        <section1>
+            <h2>Undertitel</h2>
+
+        </section1>
+
+        <section>
+
+            <article>
+
+                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>
+            </article>
+
+            <article>
+                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam corporis hic repellendus molestiae nihil consequatur sequi non ut excepturi ipsa similique, soluta accusantium quia dolore, maxime aperiam dolor esse fuga.</p>
+            </article>
+
+        </section>
+    </main>
+
+
+    <footer>
+        This is the footer
+    </footer>
+
+    <script>
+        const pic1 = document.querySelector("article:nth-child(1) img");
+        console.log(pic1);
+        pic1.src = "greta_forsøg.jpg";
+        pic1.alt = "greta_bygning";
+
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+        pic2.src = "two_faces.JPG";
+        pic2.alt = "maleri";
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        //nyt H3 element
+        let overskrift = document.createElement("h3");
+        //tekst til overskriften
+        let overskriftText = document.createTextNode("Article 3");
+        //indsæt tekst i overskriften
+        overskrift.appendChild(overskriftText);
+        //tilføj overskrift til article
+        newArticle.appendChild(overskrift);
+        //tilføj article til section
+        mainSection.appendChild(newArticle);
+
+        newArticle.innerHTML = "<img src=cyklister_sort_hvid.jpg><h1>Cyklister</h1><p>Cyklister på Frederiksundsvej</p>";
+
+    </script>
+
+</body>
+
+</html>
