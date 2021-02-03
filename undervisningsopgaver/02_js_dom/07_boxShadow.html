@@ -1,140 +1,331 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Øvelse 07</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        main {
-            margin: auto;
-            width: 80%;
-        }
-
-        section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-
-            grid-gap: 20px;
-        }
-
-        article {
-            border: 1px solid black;
-            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        }
-
         img {
             width: 100%;
         }
 
-        header,
-        footer {
+        body {
+            margin: 0, auto;
+        }
+
+        h1 {
             text-align: center;
-            border: 1px solid black;
-            padding 15px;
+        }
+
+        section {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         }
 
     </style>
 </head>
+<main>
 
-
-
-
-
-<body>
-    <header>
-        <h1>Titel</h1>
-    </header>
-
-    <main>
-
-        <section1>
-            <h2>Undertitel</h2>
-
-        </section1>
-
+    <body>
+        <header>
+            Titel
+        </header>
+        <h2>Undertitel</h2>
         <section>
-
-            <article>
-
-                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+            <article><img src="img/IMG_7524.jpg" alt="" width="100px">
                 <h3>Article 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestias, maxime veritatis amet impedit possimus culpa est repellendus commodi, corporis eos vero iure, fugiat. Quasi necessitatibus enim quam eligendi voluptas!</p>
             </article>
-
-            <article>
-                <img src="cyklister_sort_hvid.jpg" alt="cykler">
+            <article><img src="img/IMG_7532.jpg" alt="" width="100px">
                 <h3>Article 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam corporis hic repellendus molestiae nihil consequatur sequi non ut excepturi ipsa similique, soluta accusantium quia dolore, maxime aperiam dolor esse fuga.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt debitis ipsum quo ipsa velit, quas rerum quis placeat, quibusdam facilis, illo omnis id laboriosam, veritatis magnam. Ea consectetur sint, nemo.</p>
             </article>
-
         </section>
-    </main>
+
+        <footer></footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", start);
+
+            function start() {
+                console.log("DOM loaded");
+                const titel = document.querySelector("header");
+                console.log("titel");
+
+                titel.innerHTML = "<h1> Billedegalleri </h1>";
+
+                const article1 = document.querySelector("article:first-child");
+
+                const article2 = document.querySelector("article:last-child");
+
+                const under = document.querySelector("h2");
+                console.log("underoverskrift");
+
+                under.innerHTML = "Naturens skønhed";
+
+                const pic1 = document.querySelector("article:first-child img");
+                console.log("pic1");
+
+                pic1.src = "https://placeimg.com/500/500/nature";
+                pic1.alt = "Timelaps billede af skyer, der farer over himelen, mens du kigger ud over havet, hvor en badebro langer ud i vandet";
 
 
-    <footer>
-        This is the footer
-    </footer>
+                const pic2 = document.querySelector("article:last-child img");
+                console.log("pic2");
+                pic2.src = "img/sol.jpg";
+                //pic2.alt = "Solen";
 
-    <script>
-        const pic1 = document.querySelector("article:nth-child(1) img");
-        console.log(pic1);
-        pic1.src = "greta_forsøg.jpg";
-        pic1.alt = "greta_bygning";
 
-        const pic2 = document.querySelector("article:nth-child(2) img");
-        console.log(pic2);
+                const underover1 = document.querySelector("article:first-child h3");
+                console.log("underover1");
+                underover1.innerHTML = "I sne og slud skal vi alle ud";
 
-        let mainSection = document.querySelector("section");
-        //nyt article element
-        let newArticle = document.createElement("article");
-        //nyt H3 element
-        let overskrift = document.createElement("h3");
-        //tekst til overskriften
-        let overskriftText = document.createTextNode("Article 3");
-        //indsæt tekst i overskriften
-        overskrift.appendChild(overskriftText);
-        //tilføj overskrift til article
-        newArticle.appendChild(overskrift);
-        //tilføj article til section
-        mainSection.appendChild(newArticle);
+                const underover2 = document.querySelector("article:last-child h3");
+                console.log("underover2");
+                underover2.innerHTML = "Underoverskrift"
 
-        newArticle.innerHTML = "<img src=cyklister_sort_hvid.jpg> <h1 > Cyklister </h1> <p > Cyklister på Frederiksundsvej < /p>";
+                const tekst1 = document.querySelector("article p");
+                console.log("tekst1");
+                tekst1.innerHTML = "Vinterbadning er bare bedst i frostvejr. Man ved at det bliver en dejlig dag, når man selv skal lave et hul for at komme i havet. Følelsen af at sænke sig ned i det kolde et hav af slushice er fantasisk. Isen svøber sig om kroppen og omfavner en, som når man lægger sig under dynen.";
 
-        document.addEventListener("DOMContentLoaded", start);
+                const tekst2 = document.querySelector("article:last-child p");
+                console.log("tekst2");
+                tekst2.innerHTML = "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.";
 
-        function start() {
-            console.log("dom er loaded");
-            const pic1 = document.querySelector("article:nth-child(1) img");
-            //console.log(pic1);
-            pic1.src = "greta_forsøg.jpg";
-            const pic2 = document.querySelector("article:nth-child(2) img");
-            //console.log(pic2);
+
+                let mainSec = document.querySelector("section");
+                let article3 = document.createElement("article");
+
+                mainSec.appendChild(article3);
+
+
+                let pic3 = document.createElement("img");
+
+                pic3.src = "img/kalender.jpg";
+                article3.appendChild(pic3);
+                let underover3 = document.createElement("h3");
+
+                underover3.innerHTML = "Strukturer din badning"
+                article3.appendChild(underover3);
+
+                let tekst3 = document.createElement("p");
+
+                tekst3.innerHTML = "Ved at afsætte tid i kalenderen til at bade, får du rent faktisk gjort det."
+
+                article3.appendChild(tekst3);
+
+                article1.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                article2.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                article3.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+
+
+                article1.addEventListener("mouseover", fjernskygge);
+                article2.addEventListener("mouseover", fjernskygge);
+                article3.addEventListener("mouseover", fjernskygge);
+
+
+                pic1.addEventListener("click", skiftBillede);
+
+            }
+
+            function skiftBillede() {
+                randomTal = Math.round(Math.random() * 10);
+
+                let newPic1 = document.querySelector("article:first-child img");
+
+                newPic1.src = "https://placeimg.com/500/500/nature" + randomTal;
+
+                console.log("Der skiftes billede" + newPic1);
+            }
+
+            function fjernskygge() {
+                this.style.boxShadow = "none";
+                this.removeEventListener("mouseover", fjernskygge);
+                this.addEventListener("mouseout", tilføjskygge);
+            }
+
+            function tilføjskygge() {
+                this.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                this.removeEventListener("mouseout", tilføjskygge);
+
+                this.addEventListener("mouseover", fjernskygge);
+            }
+
+        </script>
+
+    </body>
+</main>
+
+</html>
+
+
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 02.02b</title>
+    <style>
+        img {
+            width: 100%;
         }
 
-        const tilfaeldigtTal = (Math.random() * 10);
-
-        pic1.addEventListener("click", tilfældigtTal);
-
-        function tilfældigtTal() {
-            pic1.src = "https://placeimg.com/400/300/arch?t=" + tilfældigtTal;
+        body {
+            margin: 0, auto;
         }
 
+        h1 {
+            text-align: center;
+        }
 
-        newArticle.classList.toggle("newArticle");
+        section {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
 
-        const newArticle = document.querySelector("newArticle");
-        article.style.boxShadow =
+    </style>
+</head>
+<main>
 
-            const team = ["Claus", "Martin", "Peter", "Alan"];
+    <body>
+        <header>
+            <!--            Titel-->
+        </header>
+        <!--        <h2>Undertitel</h2>-->
+        <section>
+            <article><img src="img/IMG_7524.jpg" alt="" width="100px">
 
-    </script>
+                <!--   Udkommenteret og sat ind med javascript istedet-->
+                <!--
+                <h3>Article 1</h3>
+                <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
+-->
+            </article>
+            <article><img src="img/IMG_7532.jpg" alt="" width="100px">
 
-</body>
+                <!--                Udkommenteret og sat ind med javascript istedet-->
+                <!--
+                <h3>Article 2</h3>
+                <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
+-->
+            </article>
+        </section>
+
+        <footer></footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", start);
+
+            function start() {
+                console.log("DOM loaded");
+                const titel = document.querySelector("header");
+                console.log("titel");
+
+                titel.innerHTML = "<h1> Billedegalleri </h1>";
+
+                const article1 = document.querySelector("article:first-child");
+
+                const article2 = document.querySelector("article:last-child");
+
+                const under = document.querySelector("h2");
+                console.log("underoverskrift");
+
+                under.innerHTML = "Naturen";
+
+                const pic1 = document.querySelector("article:first-child img");
+                console.log("pic1");
+
+                pic1.src = "https://placeimg.com/500/500/nature";
+                pic1.alt = "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.";
+
+
+                const pic2 = document.querySelector("article:last-child img");
+                console.log("pic2");
+                pic2.src = "https://placeimg.com/500/500/nature";
+                pic2.alt = "Ser du udover havet, hvor solen er på vej op i horisonten. himlen er malet i lilla nuancer.";
+
+
+                const underover1 = document.querySelector("article:first-child h3");
+                console.log("underover1");
+                underover1.innerHTML = "Første artikel";
+
+                const underover2 = document.querySelector("article:last-child h3");
+                console.log("underover2");
+                underover2.innerHTML = "Anden artikel"
+
+                const tekst1 = document.querySelector("article p");
+                console.log("tekst1");
+                tekst1.innerHTML = "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.";
+
+                const tekst2 = document.querySelector("article:last-child p");
+                console.log("tekst2");
+                tekst2.innerHTML = "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.";
+
+
+                let mainSec = document.querySelector("section");
+                let article3 = document.createElement("article");
+
+                mainSec.appendChild(article3);
+
+
+                let pic3 = document.createElement("img");
+
+                pic3.src = "https://placeimg.com/500/500/nature";
+                article3.appendChild(pic3);
+                let underover3 = document.createElement("h3");
+
+                underover3.innerHTML = "Tredje artikel"
+                article3.appendChild(underover3);
+
+                let tekst3 = document.createElement("p");
+
+                tekst3.innerHTML = "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify."
+
+                article3.appendChild(tekst3);
+
+                article1.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                article2.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                article3.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+
+
+                article1.addEventListener("mouseover", fjernskygge);
+                article2.addEventListener("mouseover", fjernskygge);
+                article3.addEventListener("mouseover", fjernskygge);
+
+
+                pic1.addEventListener("click", skiftBillede);
+
+            }
+
+            function skiftBillede() {
+                randomTal = Math.round(Math.random() * 10);
+
+                let newPic1 = document.querySelector("article:first-child img");
+
+                newPic1.src = "https://placeimg.com/500/500/nature" + randomTal;
+
+                console.log("Der skiftes billede" + newPic1);
+            }
+
+            function fjernskygge() {
+                this.style.boxShadow = "none";
+                this.removeEventListener("mouseover", fjernskygge);
+                this.addEventListener("mouseout", tilføjskygge);
+            }
+
+            function tilføjskygge() {
+                this.style.boxShadow = "10px 10px 14px 1px rgba(0,0,0,0.49)";
+                this.removeEventListener("mouseout", tilføjskygge);
+
+                this.addEventListener("mouseover", fjernskygge);
+            }
+
+        </script>
+
+    </body>
+</main>
 
 </html>
