@@ -3,68 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Vis alle dyr</title>
+    <title>JSON</title>
+    <style>
+        article {
+            border: 1px solid #333;
+            padding: 10px;
+            margin: 1em;
+        }
+
+        img {
+            max-width: 100px;
+        }
+
+    </style>
 </head>
 
-
-<style>
-    article {
-        border: 1px solid black;
-        margin: 3px auto;
-
-    }
-
-</style>
-
 <body>
+    <section>
 
+    </section>
 
-    <section class="data-container"></section>
     <template>
-        <article class="dyr">
-            <h3></h3>
-            <p class="type"></p>
-            <p class="levested"></p>
+        <article>
+            <h2></h2>
             <img src="" alt="">
+            <p class="art"></p>
+            <p class="sted"></p>
         </article>
     </template>
-
-
     <script>
-        //document.addEventListener("DOMContentLoaded", visDyr)
-        let container = document.querySelector(".data-container");
-        let dyrTemplate = document.querySelector("template");
+        let container = document.querySelector("section");
+        let temp = document.querySelector("template");
 
-        const fil="alleDyr.json";
+        //const fil = "alleDyr.json";
 
-        async function hentData(){
-            fetch(fil);
-            const result = await fetch(fil);
-            const json = await result.json();
+        async function hentdata() {
+            const respons = await fetch("alleDyr.json");
+            const json = await respons.json();
             vis(json);
         }
 
         function vis(dyr) {
-
-            //løb dyrene igennem og indsæt data i en template
-            dyr.forEach(dyr => {
-                //placer person i html
-                let klon = dyrTemplate.cloneNode(true).content;
-                klon.querySelector("h3").textContent = dyr.navn;
-                klon.querySelector(".type").textContent = dyr.type;
-                klon.querySelector(".levested").textContent = dyr.levested;
-                klon.querySelector("img").src = dyr.billede;
+            //løb igennem array "dyr"
+            dyr.forEach(etDyr => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = etDyr.navn;
+                klon.querySelector(".art").textContent = "Type: " + etDyr.type;
+                klon.querySelector(".sted").textContent = "Levested: " + etDyr.levested;
+                klon.querySelector("img").src = etDyr.billede;
                 container.appendChild(klon);
-
-
-
-
             })
         }
-hentData(fil);
+
+        hentdata();
 
     </script>
-
 </body>
 
 </html>
