@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vis dyr</title>
+</head>
+
+<body>
+
+
+
+    <!--
+    <article id="dyr">
+        <p></p>
+        <img src="" alt="">
+    </article>
+-->
+    <section id="liste"></section>
+    <script>
+
+
+      document.addEventListener("DOMContentLoaded", start);
+     let personer = [
+           {"type": "frø,", "levested": "amfibie fra vandhullet"},
+             {"type": "gris,", "levested": "pattedyr fra grisefarmen"},
+            {"type": "ræv,", "levested": "pattedyr fra skoven"},
+           {"type": "sild,", "levested": "fisk fra havet"},
+           {"type": "krokodille,", "levested": "krybdyr fra floden"}
+       ];
+
+       function start() {
+          const listevisning = document.querySelector("#liste");
+            //løb personlisten igennem i indsæt i #liste
+
+           personer.forEach(dyr => {
+                //placer person html
+              listevisning.innerHTML += `<p>${dyr.type} ${dyr.levested}</p>`
+            })
+
+        }
+console.log("dom er loaded")
+
+    </script>
+
+</body>
+
+</html>
