@@ -8,27 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-    <title></title>
+    <title>Bistro Babushka</title>
     <style>
-        .grid_container h1 {
-            display: grid;
-            grid-column: 1fr;
-            grid-row: 1fr 1fr;
-        }
-
         h1 {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr 1fr));
+            grid-template-columns: 1fr;
+            margin-top: -10rem;
             color: darkorange;
-            margin-top: -4rem;
             text-align: center;
             font-size: 3rem;
             font-family: 'Amatic SC', cursive;
         }
 
         h2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr 1fr));
             color: darkorange;
             margin-top: 6rem;
             text-align: center;
@@ -37,15 +29,16 @@
         }
 
 
-
-        .overskrift_img {
-            position: relative;
+        .splash img {
+            margin-left: -8px;
             z-index: -1;
-            min-width: 102%;
+            min-width: 100vw;
             width: auto;
             height: 48vw;
-            margin-top: auto;
+            margin-top: 0;
+
         }
+
 
         img {
             width: 60vw;
@@ -53,12 +46,13 @@
         }
 
         .logo {
+            position: relative;
             display: grid;
-            grid-template-columns: 1f 1fr;
-            width: 40vw;
-            height: 35vw;
-            margin-left: 22rem;
-            margin-top: -17rem;
+            grid-template-columns: 1fr;
+            width: 25vw;
+            height: 5vw;
+            float: right;
+            margin-top: -14rem;
         }
 
 
@@ -122,16 +116,22 @@
             display: block;
             font-family: 'Nanum Myeongjo', serif;
             font-size: 1.2rem;
-            text-align: center;
             margin-top: -5rem;
+            text-align: center;
 
         }
 
+
+
         .indhold_container {
-            border: 2px solid orange;
-            border-radius: 10%;
-            border-style: groove;
-            margin-left: 0;
+            border: solid orange;
+            border-radius: 5%;
+            border-width: 5px;
+            border-style: solid;
+            margin-left: 1rem;
+            margin-top: 1rem;
+
+
         }
 
         article {
@@ -144,18 +144,56 @@
 
         footer h3 {
             font-size: 1rem;
-            margin-left: 2rem;
+            margin-left: 1rem;
             line-height: 2rem;
+            margin-top: 3rem;
             font-family: 'Nanum Myeongjo', serif;
         }
 
         footer h4 {
             font-size: 1rem;
-            margin-left: 2rem;
+            margin-left: 1rem;
             line-height: 2rem;
             font-family: 'Nanum Myeongjo', serif;
         }
 
+        .footer_location img {
+            position: relative;
+            width: 2rem;
+            height: 2.4rem;
+            top: 8vw;
+            left: -32vw
+        }
+
+        .footer_clock img {
+            position: relative;
+            width: 8vw;
+            height: 8vw;
+            top: -25vw;
+            left: 25vw
+        }
+
+        .footer_facebook img {
+            margin-left: 1rem;
+            width: 10vw;
+            height: 10vw;
+            top: -30vw;
+            left: 25vw
+        }
+
+        .footer_instagram img {
+            position: relative;
+            margin-left: 1rem;
+            width: 10vw;
+            height: 10vw;
+            top: -10.6vw;
+            left: 14vw
+        }
+
+        .container_adresse {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
         /*desktop*/
 
@@ -163,9 +201,7 @@
 
             h1 {
                 color: darkorange;
-                display: grid;
-                grid-template-columns: 1fr;
-                margin-top: -13rem;
+                margin-top: -28rem;
                 text-align: center;
                 font-size: 8rem;
             }
@@ -174,22 +210,13 @@
             .logo {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                width: 40vw;
-                height: 35vw;
-                margin-left: 65rem;
-                margin-top: -47rem;
+                width: 20vw;
+                height: 5vw;
+                float: right;
+                top: -27rem;
             }
 
-            .overskrift_img {
-                z-index: -1;
-                min-width: 105%;
-                width: auto;
-                height: 48vw;
-                margin-top: auto;
-                background-size: cover;
-                margin-left: -3rem;
 
-            }
 
 
             button {
@@ -200,8 +227,7 @@
             }
 
             h2 {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr 1fr));
+
                 color: darkorange;
                 margin-top: 19rem;
                 text-align: center;
@@ -227,8 +253,59 @@
                 width: 30vw;
                 height: 20vw;
             }
-        }
 
+            footer h3 {
+                font-size: 1.5rem;
+                margin-left: 2.5rem;
+                line-height: 2rem;
+                font-family: 'Nanum Myeongjo', serif;
+            }
+
+            footer h4 {
+                font-size: 1.5rem;
+                margin-left: 2.5rem;
+                line-height: 2rem;
+                font-family: 'Nanum Myeongjo', serif;
+            }
+
+            .footer_location img {
+                position: relative;
+                width: 3rem;
+                height: 3.6rem;
+                top: 3.5vw;
+                left: -19vw;
+            }
+
+            .footer_clock img {
+                position: relative;
+                width: 3.5vw;
+                height: 3.5vw;
+                top: -10vw;
+                left: 13vw
+            }
+
+            .footer_facebook img {
+                margin-left: 2rem;
+                width: 5vw;
+                height: 5vw;
+                top: -30vw;
+                left: 25vw
+            }
+
+            .footer_instagram img {
+                position: relative;
+                margin-left: 2rem;
+                width: 5vw;
+                height: 5vw;
+                top: -5.2vw;
+                left: 7vw;
+            }
+
+            .container_adresse {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     </style>
 
 </head>
@@ -236,15 +313,16 @@
 
 <body>
 
-    <img class="overskrift_img" src="bistro_1.JPG" alt="splash">
 
 
 
-    <img class="logo" src="logo.png" alt="logo">
 
-    <div class="grid_h1">
-        <h1>Bistro Babushka</h1>
+
+    <div class="splash">
+        <img src="bistro_1.jpg" alt="splash">
     </div>
+    <img class="logo" src="logo.png" alt="logo">
+    <h1>Bistro Babushka</h1>
     <nav>
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
@@ -255,6 +333,7 @@
 
     <header>
         <h2>Alle retter</h2>
+
     </header>
 
     <hr style="width:95%">
@@ -342,12 +421,18 @@
         function visDetaljer(hvad) {
             location.href = `babushka_detalje.html?id=${hvad._id}`;
         }
-
     </script>
-</body>
-<footer>
-    <h3>Adresse: <br> Grønnegade 97 1234 København K</h3>
-    <h4>Åbningstider:<br> Mandag - Fredag: 10.30 - 22.00 Lørdag: 12.00 - 23.00 Søndag lukket</h4>
-</footer>
+    <footer>
+        <div class="container_adresse">
+            <h3>Adresse: <br> Grønnegade 97 1234 København K </h3>
+            <div class="footer_location"><img src="location.png" alt="location"></div>
+        </div>
 
-</html>
+        <div class="container_tider">
+            <h4>Åbningstider:<br> Mandag - Fredag: 10.30 - 22.00 Lørdag: 12.00 - 23.00 <br> Søndag lukket</h4>
+            <div class="footer_clock"><img src="clock.png" alt="clock"></div>
+            <div class="footer_facebook"><img src="facebook.png" alt="facebook"></div>
+            <div class="footer_instagram"><img src="instagram.png" alt="instagram"></div>
+        </div>
+    </footer>
+</body></html>

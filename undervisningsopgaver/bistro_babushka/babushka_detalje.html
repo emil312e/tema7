@@ -5,10 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-    <title></title>
+
+    <title>Detaljer</title>
 
     <style>
+        h3 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3rem;
+            color: darkorange;
+        }
+
         .ret {
 
             font-family: 'Nanum Myeongjo', serif;
@@ -18,7 +24,7 @@
 
         .langbeskrivelse {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
         }
 
@@ -65,27 +71,7 @@
             margin-left: 1rem;
         }
 
-        /*
-        .ret:hover .billeder {
-            opacity: 0.3;
-            transform: scale(1.1);
-            transition: .5s ease;
-        }
-*/
 
-        footer h3 {
-            font-size: 1rem;
-            margin-left: 2rem;
-            line-height: 2rem;
-            font-family: 'Nanum Myeongjo', serif;
-        }
-
-        footer h4 {
-            font-size: 1rem;
-            margin-left: 2rem;
-            line-height: 2rem;
-            font-family: 'Nanum Myeongjo', serif;
-        }
 
 
 
@@ -106,7 +92,6 @@
 
 
         }
-
     </style>
 </head>
 
@@ -120,7 +105,7 @@
         <p class="langbeskrivelse">Lang beskrivelse</p>
         <p class="oprindelsesregion">Oprindelse:</p>
         <p class="pris">Pris:</p>
-        <img src="" alt="" class="billeder">
+        <img src="" alt="ret" class="billeder">
     </article>
     <button>Tilbage</button>
 
@@ -128,51 +113,44 @@
         <hr style="width:97%">
     </div>
 
-</body>
-<footer>
-    <h3>Adresse: <br> Grønnegade 97 1234 København K</h3>
-    <h4>Åbningstider:<br> Mandag - Fredag: 10.30 - 22.00 Lørdag: 12.00 - 23.00 Søndag lukket</h4>
-</footer>
-
-</html>
 
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
 
-    const medieurl = "https://babushka-dd8a.restdb.io/media/";
-    let ret;
-    const myHeaders = {
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+        let ret;
+        const myHeaders = {
 
-        "x-apikey": "600ec2fb1346a1524ff12de4"
-    }
-    console.log("ID", id);
-    document.addEventListener("DOMContentLoaded", loadJSON);
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
 
-    async function loadJSON() {
-        const JSONData = await fetch(`https://babushka-dd8a.restdb.io/rest/menu/${id}`, {
-            headers: myHeaders
-        });
+        async function loadJSON() {
+            const JSONData = await fetch(`https://babushka-dd8a.restdb.io/rest/menu/${id}`, {
+                headers: myHeaders
+            });
 
-        ret = await JSONData.json();
+            ret = await JSONData.json();
 
-        console.log("Retter", ret);
-        visRet(ret);
+            console.log("Retter", ret);
+            visRet(ret);
 
-    }
+        }
 
-    function visRet() {
-        document.querySelector(".navn").textContent = ret.navn;
-        document.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
-        document.querySelector(".oprindelsesregion").textContent += `${ret.oprindelsesregion}`;
-        document.querySelector(".pris").textContent += `${ret.pris} kr`;
-        document.querySelector(".billeder").src = medieurl + ret.billede;
-        document.querySelector("button").addEventListener("click", tilbageTilBistroBabushka);
-    }
+        function visRet() {
+            document.querySelector(".navn").textContent = ret.navn;
+            document.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
+            document.querySelector(".oprindelsesregion").textContent += `${ret.oprindelsesregion}`;
+            document.querySelector(".pris").textContent += `${ret.pris} kr`;
+            document.querySelector(".billeder").src = medieurl + ret.billede;
+            document.querySelector("button").addEventListener("click", tilbageTilBistroBabushka);
+        }
 
-    function tilbageTilBistroBabushka() {
-        history.back();
-    }
-
-</script>
+        function tilbageTilBistroBabushka() {
+            history.back();
+        }
+    </script>
+</body></html>
